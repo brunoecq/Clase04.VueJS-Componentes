@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app1">
+      <!--*********************** INICIO EJEMPLO 1 -->
+      <!-- <button-counter></button-counter>
+      <button-counter></button-counter>
+			<button-counter></button-counter> -->
+      <!--*********************** FIN EJEMPLO 1 -->
+
+      <!--*********************** INICIO EJEMPLO 2 -->
+
+      <!-- <blog-post title="Queso"></blog-post>
+      <blog-post title="Naranjas"></blog-post>
+			<blog-post title="Carne"></blog-post> -->
+
+      <!--*********************** FIN EJEMPLO 2 -->
+
+      <!--*********************** INICIO EJEMPLO 3 -->
+      <!-- <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:id="post.id"
+        v-bind:title="post.title"
+      >
+			</blog-post> -->
+
+      <!--*********************** FIN EJEMPLO 3 -->
+
+      <!--*********************** INICIO EJEMPLO 4 -->
+
+      <!-- <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text="onEnlargeText"
+        ></blog-post>
+      </div> -->
+
+      <!--*********************** FIN EJEMPLO 4 -->
+    </div>
+    <script>
+      //*********************** INICIO EJEMPLO 1
+
+      // Vue.component("button-counter", {
+      //   data: function () {
+      //     return {
+      //       count: 0
+      //     };
+      //   },
+      //   template:
+      //     '<button v-on:click="count++">Me ha pulsado {{ count }} veces.</button>'
+      // });
+
+      // new Vue({
+      //   el: "#app1"
+      // });
+
+      //*********************** FIN EJEMPLO 1
+
+      //*********************** INICIO EJEMPLO 2
+
+      // Vue.component("blog-post", {
+      //   props: ["title"],
+      //   template: "<h3>{{ title }}</h3>"
+      // });
+
+      // new Vue({
+      //   el: "#app1"
+      // });
+
+      //*********************** FIN EJEMPLO 2
+
+      //*********************** INICIO EJEMPLO 3
+
+      // Vue.component("blog-post", {
+      //   props: ["id", "title"],
+      //   template: `
+      // 		<div class="blog-post">
+      // 			<h3>{{ id }}. {{ title }}</h3>
+      // 		</div>
+      // 	`
+      // });
+
+      // new Vue({
+      //   el: "#app1",
+      //   data: {
+      //     posts: [
+      //       { id: 1, title: "Queso" },
+      //       { id: 2, title: "Naranjas" },
+      //       { id: 3, title: "Carne" }
+      //     ],
+      //   },
+      // });
+
+      //*********************** FIN EJEMPLO 3
+
+      //*********************** INICIO EJEMPLO 4
+
+      //  Vue.component("blog-post", {
+      //     props: ["post"],
+      //     template: `
+      //   		<div class="blog-post">
+      //   			<h3>{{ post.id }}. {{ post.title }}</h3>
+      //   			<button v-if="post.id == 3" v-on:click="$emit('enlarge-text', 0.1)">
+      //   				Agrandar texto
+      //   			</button>
+      //   			<div v-html="post.content"></div>
+      //   		</div>
+      //   	`
+      //   });
+
+      //   new Vue({
+      //     el: "#app1",
+      //     data: {
+      //       posts: [
+      //         { id: 1, title: "Queso" },
+      //         { id: 2, title: "Naranjas" },
+      //         { id: 3, title: "Carne" }
+      //       ],
+      //       postFontSize: 1
+      //     },
+      //     methods: {
+      //       onEnlargeText: function (enlargeAmount) {
+      //         debugger;
+      //         this.postFontSize += enlargeAmount;
+      //       }
+      //     }
+      //   });
+
+      //*********************** FIN EJEMPLO 4
+    </script>
+  </body>
+</html>
