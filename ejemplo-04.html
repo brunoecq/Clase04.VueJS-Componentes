@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app1">
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text="onEnlargeText"
+        ></blog-post>
+      </div>
+    </div>
+    <script>
+      Vue.component("blog-post", {
+        props: ["post"],
+        template: `
+        		<div class="blog-post">
+        			<h3>{{ post.id }}. {{ post.title }}</h3>
+        			<button v-if="post.id == 3" v-on:click="$emit('enlarge-text', 0.1)">
+        				Agrandar texto
+        			</button>
+        			<div v-html="post.content"></div>
+        		</div>
+        	`
+      });
+
+      new Vue({
+        el: "#app1",
+        data: {
+          posts: [
+            { id: 1, title: "Queso" },
+            { id: 2, title: "Naranjas" },
+            { id: 3, title: "Carne" }
+          ],
+          postFontSize: 1
+        },
+        methods: {
+          onEnlargeText: function (enlargeAmount) {
+            debugger;
+            this.postFontSize += enlargeAmount;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

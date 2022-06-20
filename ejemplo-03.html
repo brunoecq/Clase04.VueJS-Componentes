@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app1">
+      <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:id="post.id"
+        v-bind:title="post.title"
+      >
+      </blog-post>
+    </div>
+    <script>
+      Vue.component("blog-post", {
+        props: ["id", "title"],
+        template: `
+      		<div class="blog-post">
+      			<h3>{{ id }}. {{ title }}</h3>
+      		</div>
+      	`
+      });
+
+      new Vue({
+        el: "#app1",
+        data: {
+          posts: [
+            { id: 1, title: "Queso" },
+            { id: 2, title: "Naranjas" },
+            { id: 3, title: "Carne" }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
